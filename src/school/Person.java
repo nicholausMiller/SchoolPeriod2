@@ -102,6 +102,6 @@ public class Person {
     }    
     public String toString()
     {
-        return(name + " " + gender + " " + weight);
+        return(name + " " + gender + " " + weight+""+getAge()+;
     }
 }
