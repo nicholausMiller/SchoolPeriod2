@@ -1,7 +1,6 @@
 
 package school;
 import java.util.ArrayList;
-
 public class Course {
     enum Type {
         Math,Science,English,History,Language,Elective,PE
@@ -10,6 +9,8 @@ public class Course {
     private String name;
     private Type type;
     private int period;
+    
+    private Student theStudent;
 
     public static Course addCourse(String _name,
     Type _type, int _period)
@@ -30,6 +31,16 @@ public class Course {
         type = _type;
         period = _period;
     }   
+
+    public void addStudent(Student _student)
+    {
+        if (theStudent == null)
+        {
+            theStudent = _student;
+            _student.addCourse(this);
+        }
+    }        
+    
     public void setPeriod(int _period)
     {
         period = _period;
@@ -64,6 +75,6 @@ public class Course {
     }    
     public String toString()
     {
-        return(name + " " + type + " " + period);
+        return(name + " " + type + " " + period + " " + theStudent.getName());
     }    
 }

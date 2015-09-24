@@ -3,11 +3,11 @@ public class School {
     public static void main(String[] args) {
         Person joe = 
         Person.addPerson("Joe",Person.Gender.Male,120);
-        Person jill = 
-        Person.addPerson("Jill",Person.Gender.Female,105);
+        Student jill = 
+        Student.addStudent("Jill",Person.Gender.Female,105,9);
         jill.setName("Julie");
-        Person billyJoe = 
-        Person.addPerson("BillyJoe",Person.Gender.Male,210);
+        Student billyJoe = 
+        Student.addStudent("BillyJoe",Person.Gender.Male,210,12);
         
         billyJoe.getWeight();
         int val = billyJoe.getWeight();
@@ -15,14 +15,28 @@ public class School {
         Person.printNames();
         Person.printNames(Person.Gender.Female);
         
-        System.out.println(billyJoe);
+     
         
         Course geom = 
         Course.addCourse("Geometry", Course.Type.Math, 1);
         Course photo = 
         Course.addCourse("Photography", Course.Type.Elective, 3);
         Course.printNames();
-        System.out.println(photo);
+    
         
+    //    geom.addPerson(joe);
+ 
+ 
+        
+        System.out.println(joe);        
+        
+        Student bobby = 
+        Student.addStudent("Bobby",Person.Gender.Male,168,11);
+        geom.addStudent(bobby);
+        
+        System.out.println(bobby.getName());
+        Person.printNames();
+        Student.printNames();
+      
     }
 }
